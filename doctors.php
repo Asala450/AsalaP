@@ -8,7 +8,7 @@
 <div class="doctor-grid">
     <div class="doctor-card">
         <div class="doctor-img">
-            <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=400&q=80" alt="Дәрігер">
+            <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=400&q=80" alt="Ахметов Арман">
         </div>
         <div class="doctor-info">
             <h3>Др. Ахметов Арман</h3>
@@ -19,7 +19,7 @@
 
     <div class="doctor-card">
         <div class="doctor-img">
-            <img src="https://images.unsplash.com/photo-1594824813575-584f0923f114?auto=format&fit=crop&w=400&q=80" alt="Дәрігер">
+            <img src="https://images.unsplash.com/photo-1594824813575-584f0923f114?auto=format&fit=crop&w=400&q=80" alt="Оспанова Айна">
         </div>
         <div class="doctor-info">
             <h3>Др. Оспанова Айна</h3>
@@ -30,7 +30,7 @@
 
     <div class="doctor-card">
         <div class="doctor-img">
-            <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=400&q=80" alt="Дәрігер">
+            <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=400&q=80" alt="Каримов Данияр">
         </div>
         <div class="doctor-info">
             <h3>Др. Каримов Данияр</h3>
@@ -41,7 +41,7 @@
 
     <div class="doctor-card">
         <div class="doctor-img">
-            <img src="https://images.unsplash.com/photo-1594824813543-dad181d0f12e?auto=format&fit=crop&w=400&q=80" alt="Дәрігер">
+            <img src="https://images.unsplash.com/photo-1594824813543-dad181d0f12e?auto=format&fit=crop&w=400&q=80" alt="Сейтова Динара">
         </div>
         <div class="doctor-info">
             <h3>Др. Сейтова Динара</h3>

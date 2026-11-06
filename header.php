@@ -20,8 +20,6 @@ if (session_status() === PHP_SESSION_NONE) {
         <nav class="nav-links">
             <a href="index.php">Басты бет</a>
             <a href="doctors.php">Дәрігерлер</a>
-            <a href="appointment.php">Қабылдауға жазылу</a>
-            
             <?php if (isset($_SESSION['user'])): ?>
                 <span class="welcome-user">👤 <?= htmlspecialchars($_SESSION['user']) ?></span>
                 <a href="logout.php" class="nav-btn-logout">Шығу</a>
