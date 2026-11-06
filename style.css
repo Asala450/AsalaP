@@ -1,0 +1,202 @@
+/* Сіз көрсеткен премиум түс палитрасы */
+:root {
+    --bg-dark: #05161A;
+    --primary-dark: #072E33;
+    --accent-teal: #0C7075;
+    --bright-teal: #0F969C;
+    --light-blue: #6DA5C0;
+    --slate-blue: #294D61;
+    --white: #FFFFFF;
+    --text-color: #E2F1F8;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header & Nav */
+.main-header {
+    background-color: var(--primary-dark);
+    padding: 1.2rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--accent-teal);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.logo h2 {
+    color: var(--bright-teal);
+}
+
+.nav-links a {
+    color: var(--light-blue);
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--bright-teal);
+}
+
+/* Main Container */
+.container {
+    flex: 1;
+    padding: 2.5rem 1rem;
+    max-width: 900px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Hero Section */
+.hero-section {
+    text-align: center;
+    padding: 5rem 2rem;
+    background: linear-gradient(135deg, var(--primary-dark), var(--slate-blue));
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    margin-top: 1rem;
+}
+
+.hero-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--bright-teal);
+}
+
+.hero-section p {
+    color: var(--light-blue);
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+/* Buttons */
+.btn-primary {
+    display: inline-block;
+    background-color: var(--bright-teal);
+    color: var(--bg-dark);
+    padding: 0.8rem 1.8rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.btn-primary:hover {
+    background-color: var(--light-blue);
+    transform: translateY(-2px);
+}
+
+/* Doctors Grid */
+.doctor-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.doctor-card {
+    background-color: var(--slate-blue);
+    padding: 1.8rem;
+    border-radius: 10px;
+    border-left: 5px solid var(--bright-teal);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.doctor-card h3 {
+    color: var(--white);
+    margin-bottom: 0.5rem;
+}
+
+.doctor-card .spec {
+    color: var(--light-blue);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+/* Form Styles */
+.form-container {
+    background-color: var(--primary-dark);
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+    border: 1px solid var(--accent-teal);
+}
+
+.form-container h2 {
+    color: var(--bright-teal);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 1.2rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.4rem;
+    color: var(--light-blue);
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: var(--bg-dark);
+    border: 1px solid var(--accent-teal);
+    border-radius: 6px;
+    color: var(--white);
+    font-size: 1rem;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--bright-teal);
+}
+
+/* Alerts */
+.alert-error {
+    background-color: rgba(255, 75, 75, 0.15);
+    border: 1px solid #ff4b4b;
+    padding: 1rem;
+    border-radius: 6px;
+    margin-bottom: 1.2rem;
+    color: #ff8b8b;
+}
+
+.alert-success {
+    background-color: rgba(75, 181, 67, 0.15);
+    border: 1px solid #4bb543;
+    padding: 1rem;
+    border-radius: 6px;
+    margin-bottom: 1.2rem;
+    color: #8be886;
+}
+
+/* Footer */
+.main-footer {
+    background-color: var(--bg-dark);
+    text-align: center;
+    padding: 1.5rem;
+    border-top: 1px solid var(--primary-dark);
+    color: var(--light-blue);
+    font-size: 0.9rem;
+}

@@ -1,9 +1,9 @@
-<?php include 'includes/header.php'; ?>
+<?php include 'header.php'; ?>
 
-<section class="hero">
+<section class="hero-section">
     <h1>Дәрігер қабылдауына онлайн жазылу</h1>
-    <p>Өзіңізге қажетті маманды таңдап, қолайлы уақытқа қабылдауға жазылыңыз.</p>
-    <a href="appointment.php" class="btn">Қабылдауға жазылу</a>
+    <p>Біздің жүйе арқылы өз қалаған маманға жылдам әрі ыңғайлы уақытта жазыла аласыз.</p>
+    <a href="appointment.php" class="btn-primary">Қазір жазылу</a>
 </section>
 
-<?php include 'includes/footer.php'; ?>
+<?php include 'footer.php'; ?>

@@ -7,14 +7,14 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
+    <header class="main-header">
         <div class="logo">
-            <h2>MedCare</h2>
+            <h2>🩺 MedCare</h2>
         </div>
-        <nav>
+        <nav class="nav-links">
             <a href="index.php">Басты бет</a>
             <a href="doctors.php">Дәрігерлер</a>
-            <a href="appointment.php">Дәрігерге жазылу</a>
+            <a href="appointment.php">Қабылдауға жазылу</a>
         </nav>
     </header>
-    <main>
+    <main class="container">
