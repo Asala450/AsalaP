@@ -1,13 +1,17 @@
-</main>
-    <footer>
-        <p>&copy; 2006-2026 Әлеуметтік желі. Барлық құқықтар қорғалған.</p>
-        <div>
-            <a href="#">сайт туралы</a>
-            <a href="#">көмек</a>
-            <a href="#">ережелер</a>
-            <a href="#">жарнама</a>
-        </div>
-    </footer>
-    <script src="script.js"></script>
+
+<footer class="footer" id="contact">
+    <div class="footer-logo">♡ MedBlue</div>
+
+    <div class="footer-links">
+        <a href="index.php">Басты бет</a>
+        <a href="doctors.php">Дәрігерлер</a>
+        <a href="login.php">Кіру</a>
+        <a href="register.php">Тіркелу</a>
+    </div>
+
+    <p>© 2026 MedBlue. Барлық құқық қорғалған.</p>
+</footer>
+
+<script src="js/script.js"></script>
 </body>
 </html>

@@ -1,187 +1,476 @@
+
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
+    box-sizing: border-box;
 }
 
 body {
-    background-color: #edeef0;
-    color: #000;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background: #edf4ff;
+    color: #102e59;
 }
 
-header {
-    background-color: #5181b8;
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* HEADER */
+
+.header {
+    background: #102c55;
     color: white;
-    padding: 10px 20px;
+    min-height: 72px;
+    padding: 15px 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 20px;
 }
 
-header h2 {
-    font-size: 20px;
+.logo {
+    font-size: 25px;
+    font-weight: bold;
 }
 
-header nav a {
-    color: white;
-    text-decoration: none;
-    margin-left: 20px;
+.logo span {
+    color: #72c7ff;
+    font-size: 35px;
+}
+
+.nav {
+    display: flex;
+    gap: 25px;
+}
+
+.nav a {
     font-size: 14px;
 }
 
-header nav a:hover {
-    text-decoration: underline;
+.nav a:hover {
+    color: #72c7ff;
 }
 
-main {
-    flex: 1;
-    max-width: 960px;
-    margin: 20px auto;
-    width: 100%;
-    padding: 0 15px;
+.login-btn {
+    background: white;
+    color: #102c55;
+    padding: 12px 25px;
+    border-radius: 30px;
 }
 
-.main-container {
-    display: flex;
-    gap: 30px;
-}
+/* HERO */
 
-/* Сол жақ: Кіру формасы */
-.login-section {
-    width: 280px;
-    background: #fff;
-    padding: 15px;
-    border-radius: 4px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-    height: fit-content;
-}
-
-.login-section h3 {
-    font-size: 16px;
-    margin-bottom: 15px;
-    color: #2a5885;
-}
-
-.form-group {
-    margin-bottom: 10px;
-}
-
-.form-group input {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #c7d1db;
-    border-radius: 3px;
-    font-size: 13px;
-}
-
-.checkbox-group {
-    font-size: 12px;
+.hero {
+    min-height: 420px;
+    background: linear-gradient(120deg, #eaf3ff, #b9d9ff);
     display: flex;
     align-items: center;
-    gap: 5px;
-    margin-bottom: 10px;
+    justify-content: space-around;
+    padding: 45px 7%;
+    overflow: hidden;
+    border-radius: 0 0 35px 35px;
 }
 
-.btn {
-    background-color: #5181b8;
-    color: white;
-    border: none;
-    padding: 8px 15px;
-    border-radius: 3px;
-    cursor: pointer;
-    font-size: 13px;
+.hero-content {
+    max-width: 550px;
+}
+
+.small-title {
+    color: #2679ce;
     font-weight: bold;
-    width: 100%;
-}
-
-.btn:hover {
-    background-color: #4171a4;
-}
-
-.forgot-link {
-    display: block;
-    text-align: center;
-    font-size: 12px;
-    color: #2a5885;
-    text-decoration: none;
-    margin-top: 10px;
-}
-
-.forgot-link:hover {
-    text-decoration: underline;
-}
-
-/* Оң жақ: Тіркелу және ақпарат */
-.content-section {
-    flex: 1;
-    background: #fff;
-    padding: 20px;
-    border-radius: 4px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-}
-
-.content-section h2 {
-    font-size: 18px;
-    color: #2a5885;
-    margin-bottom: 15px;
-}
-
-.register-box {
-    margin-top: 20px;
-    border-top: 1px solid #e7e8ec;
-    padding-top: 15px;
-}
-
-.register-box h3 {
-    font-size: 15px;
-    margin-bottom: 10px;
-}
-
-.error-text {
-    color: #e64646;
-    font-size: 11px;
-    margin-top: 3px;
-    display: none;
-}
-
-.alert {
-    padding: 10px;
-    margin-bottom: 15px;
-    border-radius: 3px;
     font-size: 13px;
 }
 
-.alert-success {
-    background-color: #e6f7ed;
-    color: #2e7d32;
-    border: 1px solid #b7e1cd;
+.hero h1 {
+    font-size: 40px;
+    margin: 20px 0;
+    line-height: 1.2;
 }
 
-.alert-danger {
-    background-color: #fde8e8;
-    color: #c62828;
-    border: 1px solid #f8bcbc;
+.hero p {
+    font-size: 19px;
+    line-height: 1.6;
+    margin-bottom: 25px;
 }
 
-footer {
-    background-color: #fff;
-    border-top: 1px solid #e7e8ec;
-    text-align: center;
+.hero-image img {
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 45% 45% 20% 20%;
+}
+
+.main-btn {
+    display: inline-block;
+    background: #164783;
+    color: white;
+    padding: 13px 27px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.main-btn:hover {
+    background: #2878ce;
+}
+
+/* ADVANTAGES */
+
+.advantages {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.advantages div {
+    background: white;
     padding: 15px;
-    font-size: 12px;
-    color: #656565;
-    margin-top: auto;
+    border-radius: 18px;
+    text-align: center;
+    font-size: 13px;
+    box-shadow: 0 4px 15px #b5cbea;
 }
 
-footer a {
-    color: #2a5885;
-    text-decoration: none;
-    margin: 0 10px;
+/* SERVICES */
+
+.services {
+    padding: 45px 6%;
+    text-align: center;
 }
-footer a:hover {
-    text-decoration: underline;
+
+.services h2,
+.doctors-section h2 {
+    font-size: 28px;
+    margin-bottom: 25px;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.service-card {
+    background: white;
+    border: 1px solid #d6e4f7;
+    border-radius: 20px;
+    padding: 25px 15px;
+    text-align: left;
+    transition: 0.3s;
+}
+
+.service-card:hover,
+.doctor-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px #c3d8f4;
+}
+
+.service-card span {
+    font-size: 35px;
+}
+
+.service-card h3 {
+    margin: 15px 0 8px;
+}
+
+.service-card p {
+    color: #667c9c;
+    font-size: 13px;
+}
+
+.about {
+    text-align: center;
+    padding: 40px 10%;
+    line-height: 1.8;
+}
+
+/* DOCTORS */
+
+.doctors-section {
+    padding: 35px 6%;
+}
+
+.doctor-banner {
+    background: linear-gradient(120deg, #d9eaff, #a8cdf5);
+    border-radius: 25px;
+    padding: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 35px;
+}
+
+.doctor-banner h1 {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.doctor-banner p {
+    margin-bottom: 20px;
+}
+
+.doctor-banner img {
+    width: 230px;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.search-form {
+    display: flex;
+    gap: 12px;
+    margin: 20px 0 30px;
+}
+
+.search-form input,
+.search-form select {
+    flex: 1;
+}
+
+.doctor-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.doctor-card {
+    background: white;
+    padding: 22px;
+    border-radius: 20px;
+    text-align: center;
+    border: 1px solid #d9e6f7;
+    transition: 0.3s;
+}
+
+.doctor-icon {
+    font-size: 75px;
+    background: #e6f1ff;
+    border-radius: 15px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.doctor-card h3 {
+    margin: 10px 0;
+}
+
+.doctor-card p {
+    margin: 8px 0;
+}
+
+.rating {
+    color: #e4a500;
+    font-size: 13px;
+}
+
+/* LOGIN AND REGISTER */
+
+.auth-section {
+    min-height: 570px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 50px 8%;
+    background: linear-gradient(120deg, #c5e0ff, #eff6ff);
+}
+
+.auth-info {
+    text-align: center;
+}
+
+.auth-info h1 {
+    font-size: 35px;
+    margin: 15px;
+}
+
+.auth-info p {
+    font-size: 18px;
+}
+
+.heart-logo {
+    font-size: 100px;
+    color: #1677dc;
+}
+
+.medical-icon {
+    display: block;
+    font-size: 100px;
+    margin-top: 30px;
+}
+
+.auth-box,
+.booking-box {
+    background: white;
+    padding: 35px;
+    width: 400px;
+    border-radius: 25px;
+    box-shadow: 0 8px 30px #b8cee9;
+}
+
+.auth-box h2,
+.booking-box h1 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 14px;
+    margin: 10px 0;
+    border: 1px solid #d6e1f0;
+    border-radius: 12px;
+    outline: none;
+    font-size: 14px;
+}
+
+input:focus,
+select:focus {
+    border-color: #2878ce;
+}
+
+.full-btn {
+    width: 100%;
+    margin-top: 15px;
+}
+
+.auth-box p {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.auth-box a {
+    color: #1677dc;
+    font-weight: bold;
+}
+
+.error {
+    color: #d32f2f;
+    margin: 10px 0;
+}
+
+.success {
+    color: #13834b;
+    background: #e6f8ed;
+    padding: 12px;
+    border-radius: 10px;
+    margin: 15px 0;
+    text-align: center;
+}
+
+/* BOOKING */
+
+.booking-section {
+    min-height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    background: #eaf3ff;
+}
+
+.booking-box {
+    width: 480px;
+}
+
+.booking-box label {
+    display: block;
+    margin-top: 12px;
+    font-weight: bold;
+}
+
+/* FOOTER */
+
+.footer {
+    background: #102c55;
+    color: white;
+    padding: 30px;
+    text-align: center;
+}
+
+.footer-logo {
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-bottom: 20px;
+}
+
+.footer p {
+    font-size: 12px;
+    color: #c8d9ee;
+}
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+    .header {
+        flex-wrap: wrap;
+    }
+
+    .nav {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 29px;
+    }
+
+    .hero-image img {
+        width: 260px;
+        height: 260px;
+        margin-top: 30px;
+    }
+
+    .advantages {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .service-grid,
+    .doctor-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .doctor-banner {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .search-form {
+        flex-direction: column;
+    }
+
+    .auth-section {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .auth-box {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .service-grid,
+    .doctor-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-links {
+        flex-wrap: wrap;
+    }
 }
