@@ -1,6 +1,6 @@
 </main>
     <footer class="main-footer">
-        <p>&copy; 2026 Дәрігерге жазылу жүйесі (Doctor Appointment System). Барлық құқықтар қорғалған.</p>
+        <p>&copy; 2026 MedBlue Дәрігерге жазылу жүйесі. Барлық құқықтар қорғалған.</p>
     </footer>
 </body>
 </html>
