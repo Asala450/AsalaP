@@ -1,0 +1,187 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #edeef0;
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #5181b8;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h2 {
+    font-size: 20px;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 14px;
+}
+
+header nav a:hover {
+    text-decoration: underline;
+}
+
+main {
+    flex: 1;
+    max-width: 960px;
+    margin: 20px auto;
+    width: 100%;
+    padding: 0 15px;
+}
+
+.main-container {
+    display: flex;
+    gap: 30px;
+}
+
+/* Сол жақ: Кіру формасы */
+.login-section {
+    width: 280px;
+    background: #fff;
+    padding: 15px;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    height: fit-content;
+}
+
+.login-section h3 {
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: #2a5885;
+}
+
+.form-group {
+    margin-bottom: 10px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #c7d1db;
+    border-radius: 3px;
+    font-size: 13px;
+}
+
+.checkbox-group {
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+.btn {
+    background-color: #5181b8;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: bold;
+    width: 100%;
+}
+
+.btn:hover {
+    background-color: #4171a4;
+}
+
+.forgot-link {
+    display: block;
+    text-align: center;
+    font-size: 12px;
+    color: #2a5885;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+.forgot-link:hover {
+    text-decoration: underline;
+}
+
+/* Оң жақ: Тіркелу және ақпарат */
+.content-section {
+    flex: 1;
+    background: #fff;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.content-section h2 {
+    font-size: 18px;
+    color: #2a5885;
+    margin-bottom: 15px;
+}
+
+.register-box {
+    margin-top: 20px;
+    border-top: 1px solid #e7e8ec;
+    padding-top: 15px;
+}
+
+.register-box h3 {
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.error-text {
+    color: #e64646;
+    font-size: 11px;
+    margin-top: 3px;
+    display: none;
+}
+
+.alert {
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 3px;
+    font-size: 13px;
+}
+
+.alert-success {
+    background-color: #e6f7ed;
+    color: #2e7d32;
+    border: 1px solid #b7e1cd;
+}
+
+.alert-danger {
+    background-color: #fde8e8;
+    color: #c62828;
+    border: 1px solid #f8bcbc;
+}
+
+footer {
+    background-color: #fff;
+    border-top: 1px solid #e7e8ec;
+    text-align: center;
+    padding: 15px;
+    font-size: 12px;
+    color: #656565;
+    margin-top: auto;
+}
+
+footer a {
+    color: #2a5885;
+    text-decoration: none;
+    margin: 0 10px;
+}
+footer a:hover {
+    text-decoration: underline;
+}
