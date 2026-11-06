@@ -10,19 +10,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $doctorSelect = trim($_POST['doctor_select'] ?? '');
     $appointmentDate = trim($_POST['appointment_date'] ?? '');
 
-    // Серверлік тексеру (Валидация)
-    if (empty($userName)) {
-        $errors[] = 'Толық аты-жөніңізді енгізіңіз!';
-    }
-    if (empty($userEmail) || !filter_var($userEmail, FILTER_VALIDATE_EMAIL)) {
-        $errors[] = 'Дұрыс email мекенжайын көрсетіңіз!';
-    }
-    if (empty($doctorSelect)) {
-        $errors[] = 'Дәрігерді таңдаңыз!';
-    }
-    if (empty($appointmentDate)) {
-        $errors[] = 'Қабылдау күнін таңдаңыз!';
-    }
+    if (empty($userName)) { $errors[] = 'Толық аты-жөніңізді енгізіңіз!'; }
+    if (empty($userEmail) || !filter_var($userEmail, FILTER_VALIDATE_EMAIL)) { $errors[] = 'Дұрыс email мекенжайын көрсетіңіз!'; }
+    if (empty($doctorSelect)) { $errors[] = 'Дәрігерді таңдаңыз!'; }
+    if (empty($appointmentDate)) { $errors[] = 'Қабылдау күнін таңдаңыз!'; }
 
     if (empty($errors)) {
         $successMessage = "Құттықтаймыз, $userName! Сіздің өтінішіңіз сәтті қабылданды.";
@@ -37,43 +28,37 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         <?php if (!empty($errors)): ?>
             <div class="alert-error">
-                <?php foreach ($errors as $error): ?>
-                    <p>⚠️ <?= htmlspecialchars($error) ?></p>
-                <?php endforeach; ?>
+                <?php foreach ($errors as $error): ?><p>⚠️ <?= htmlspecialchars($error) ?></p><?php endforeach; ?>
             </div>
         <?php endif; ?>
 
         <?php if ($successMessage): ?>
-            <div class="alert-success">
-                <p>✅ <?= htmlspecialchars($successMessage) ?></p>
-            </div>
+            <div class="alert-success"><p>✅ <?= htmlspecialchars($successMessage) ?></p></div>
         <?php endif; ?>
 
         <form action="appointment.php" method="POST" class="appointment-form">
             <div class="form-group">
-                <label for="user_name">Аты-жөніңіз:</label>
-                <input type="text" id="user_name" name="user_name" value="<?= htmlspecialchars($_POST['user_name'] ?? '') ?>" placeholder="Мысалы: Айдын Сапарұлы">
+                <label>Аты-жөніңіз:</label>
+                <input type="text" name="user_name" value="<?= htmlspecialchars($_POST['user_name'] ?? '') ?>" placeholder="Аты-жөніңіз">
             </div>
-
             <div class="form-group">
-                <label for="user_email">Электрондық пошта (Email):</label>
-                <input type="email" id="user_email" name="user_email" value="<?= htmlspecialchars($_POST['user_email'] ?? '') ?>" placeholder="example@mail.com">
+                <label>Электрондық пошта (Email):</label>
+                <input type="email" name="user_email" value="<?= htmlspecialchars($_POST['user_email'] ?? '') ?>" placeholder="mail@example.com">
             </div>
-
             <div class="form-group">
-                <label for="doctor_select">Дәрігерді таңдаңыз:</label>
-                <select id="doctor_select" name="doctor_select">
+                <label>Дәрігерді таңдаңыз:</label>
+                <select name="doctor_select">
                     <option value="">-- Тізімнен таңдаңыз --</option>
-                    <option value="1" <?= (($_POST['doctor_select'] ?? '') == '1') ? 'selected' : '' ?>>Др. Ахметов Арман (Терапевт)</option>
-                    <option value="2" <?= (($_POST['doctor_select'] ?? '') == '2') ? 'selected' : '' ?>>Др. Оспанова Айна (Кардиолог)</option>
+                    <option value="1">Др. Ахметов Арман (Терапевт)</option>
+                    <option value="2">Др. Оспанова Айна (Кардиолог)</option>
+                    <option value="3">Др. Каримов Данияр (Невролог)</option>
+                    <option value="4">Др. Сейтова Динара (Педиатр)</option>
                 </select>
             </div>
-
             <div class="form-group">
-                <label for="appointment_date">Қабылдау күні:</label>
-                <input type="date" id="appointment_date" name="appointment_date" value="<?= htmlspecialchars($_POST['appointment_date'] ?? '') ?>">
+                <label>Қабылдау күні:</label>
+                <input type="date" name="appointment_date" value="<?= htmlspecialchars($_POST['appointment_date'] ?? '') ?>">
             </div>
-
             <button type="submit" class="btn-primary full-width">Жазылуды растау</button>
         </form>
     </div>
