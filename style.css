@@ -156,17 +156,25 @@ body {
 .doctor-info .spec { color: var(--color-light-mid); font-weight: 500; margin-bottom: 0.3rem; }
 .doctor-info .exp { color: var(--color-lightest); font-size: 0.9rem; opacity: 0.8; }
 
-.form-container-wrapper { display: flex; justify-content: center; align-items: center; }
+/* Auth беті */
+.auth-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
 .form-card {
     background-color: var(--color-dark);
-    padding: 3rem;
+    padding: 2.5rem;
     border-radius: 20px;
     width: 100%;
-    max-width: 500px;
+    max-width: 450px;
     border: 1px solid var(--color-mid);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
-.form-card h2 { color: var(--color-lightest); text-align: center; margin-bottom: 0.5rem; }
-.form-desc { color: var(--color-light-mid); margin-bottom: 1.5rem; font-size: 0.95rem; }
+.form-card h2 { color: var(--color-lightest); text-align: center; margin-bottom: 0.3rem; }
+.form-desc { text-align: center; color: var(--color-light-mid); margin-bottom: 1.5rem; font-size: 0.95rem; }
 
 .form-group { margin-bottom: 1.2rem; }
 .form-group label { display: block; margin-bottom: 0.5rem; color: var(--color-light-mid); font-weight: 500; }
@@ -192,6 +200,19 @@ body {
     transition: 0.3s;
 }
 .btn-primary:hover { background-color: var(--color-light-mid); }
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--color-lightest);
+    padding: 0.8rem 1.8rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    border: 2px solid var(--color-light-mid);
+    cursor: pointer;
+    transition: 0.3s;
+}
+.btn-secondary:hover { background-color: rgba(125, 160, 202, 0.2); }
 
 .alert-error { background-color: rgba(255, 75, 75, 0.2); border: 1px solid #ff4b4b; padding: 0.8rem; border-radius: 8px; margin-bottom: 1rem; color: #ff9999; font-size: 0.9rem; }
 .alert-success { background-color: rgba(75, 181, 67, 0.2); border: 1px solid #4bb543; padding: 0.8rem; border-radius: 8px; margin-bottom: 1rem; color: #99ff99; font-size: 0.9rem; }

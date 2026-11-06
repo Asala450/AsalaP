@@ -1,4 +1,4 @@
-<?php include 'header.php'; ?>
+<?php include 'includes/header.php'; ?>
 
 <div class="page-title">
     <h2>Біздің жоғары санатты дәрігерлер</h2>
@@ -51,4 +51,4 @@
     </div>
 </div>
 
-<?php include 'footer.php'; ?>
+<?php include 'includes/footer.php'; ?>

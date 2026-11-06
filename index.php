@@ -1,10 +1,11 @@
 <?php 
-include 'header.php'; 
+include 'includes/header.php'; 
 
 $errors = [];
 $successMessage = '';
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+// 10-апта талабы: $_POST арқылы форманы өңдеу және серверде тексеру[cite: 3]
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['appointment_submit'])) {
     $userName = trim($_POST['user_name'] ?? '');
     $userEmail = trim($_POST['user_email'] ?? '');
     $doctorSelect = trim($_POST['doctor_select'] ?? '');
@@ -60,7 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <label>Қабылдау күні:</label>
                 <input type="date" name="appointment_date" value="<?= htmlspecialchars($_POST['appointment_date'] ?? '') ?>">
             </div>
-            <button type="submit" class="btn-primary full-width">Жазылуды растау</button>
+            <button type="submit" name="appointment_submit" class="btn-primary full-width">Жазылуды растау</button>
         </form>
     </div>
 
@@ -74,4 +75,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </div>
 </div>
 
-<?php include 'footer.php'; ?>
+<?php include 'includes/footer.php'; ?>

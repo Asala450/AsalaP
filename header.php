@@ -24,7 +24,7 @@ if (session_status() === PHP_SESSION_NONE) {
                 <span class="welcome-user">👤 <?= htmlspecialchars($_SESSION['user']) ?></span>
                 <a href="logout.php" class="nav-btn-logout">Шығу</a>
             <?php else: ?>
-                <a href="login.php" class="nav-btn">Кіру</a>
+                <a href="auth.php" class="nav-btn">Кіру / Тіркелу</a>
             <?php endif; ?>
         </nav>
     </header>
