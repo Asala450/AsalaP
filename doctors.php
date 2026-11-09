@@ -1,5 +1,5 @@
 
-<?php include 'includes/header.php'; ?>
+<?php include 'header.php'; ?>
 
 <section class="doctors-section">
 
@@ -82,4 +82,4 @@
 
 </section>
 
-<?php include 'includes/footer.php'; ?>
+<?php include 'footer.php'; ?>

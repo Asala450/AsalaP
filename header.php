@@ -4,12 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MedBlue</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>MedBlue – Медициналық жүйе</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header class="header">
+
     <a href="index.php" class="logo">
         <span>♡</span> MedBlue
     </a>
@@ -23,4 +25,5 @@
     </nav>
 
     <a href="login.php" class="login-btn">♙ Кіру</a>
+
 </header>

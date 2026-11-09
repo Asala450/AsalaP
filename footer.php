@@ -1,5 +1,6 @@
 
 <footer class="footer" id="contact">
+
     <div class="footer-logo">♡ MedBlue</div>
 
     <div class="footer-links">
@@ -10,8 +11,10 @@
     </div>
 
     <p>© 2026 MedBlue. Барлық құқық қорғалған.</p>
+
 </footer>
 
-<script src="js/script.js"></script>
+<script src="script.js"></script>
+
 </body>
 </html>

@@ -1,6 +1,6 @@
 
 <?php
-include 'includes/header.php';
+include 'header.php';
 
 $doctor = $_GET['doctor'] ?? '';
 $message = '';
@@ -57,4 +57,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 </section>
 
-<?php include 'includes/footer.php'; ?>
+<?php include 'footer.php'; ?>

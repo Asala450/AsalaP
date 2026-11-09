@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-include 'includes/header.php';
+include 'header.php';
 ?>
 
 <section class="auth-section">
@@ -56,4 +56,4 @@ include 'includes/header.php';
 
 </section>
 
-<?php include 'includes/footer.php'; ?>
+<?php include 'footer.php'; ?>
