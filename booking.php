@@ -1,60 +1,84 @@
-
 <?php
-include 'header.php';
+require_once "database.php";
 
-$doctor = $_GET['doctor'] ?? '';
-$message = '';
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
-    $name = trim($_POST['name'] ?? '');
-    $phone = trim($_POST['phone'] ?? '');
-    $date = $_POST['date'] ?? '';
-
-    if ($name === '' || $phone === '' || $date === '') {
-        $message = 'Барлық өрістерді толтырыңыз!';
-    } elseif ($date < date('Y-m-d')) {
-        $message = 'Өткен күнге жазылуға болмайды!';
-    } else {
-        $message = 'Сіз дәрігер қабылдауына жазылу өтінімін жібердіңіз!';
-    }
+// CREATE (Қосу)
+if ($_SERVER["REQUEST_METHOD"] === "POST" && ($_POST["action"] ?? "") === "create") {
+    $stmt = $pdo->prepare(
+        "INSERT INTO bookings (patient_name, doctor_name, appointment_date) VALUES (:patient, :doctor, :bdate)"
+    );
+    $stmt->execute([
+        ":patient" => trim($_POST["patient_name"]),
+        ":doctor"  => trim($_POST["doctor_name"]),
+        ":bdate"   => $_POST["appointment_date"]
+    ]);
 }
+
+// UPDATE (Өңдеу)
+if ($_SERVER["REQUEST_METHOD"] === "POST" && ($_POST["action"] ?? "") === "update") {
+    $stmt = $pdo->prepare(
+        "UPDATE bookings SET patient_name = :patient, doctor_name = :doctor, appointment_date = :bdate WHERE id = :id"
+    );
+    $stmt->execute([
+        ":patient" => trim($_POST["patient_name"]),
+        ":doctor"  => trim($_POST["doctor_name"]),
+        ":bdate"   => $_POST["appointment_date"],
+        ":id"      => (int)$_POST["id"]
+    ]);
+}
+
+// DELETE (Жою)
+if (isset($_GET["delete"])) {
+    $stmt = $pdo->prepare("DELETE FROM bookings WHERE id = :id");
+    $stmt->execute([":id" => (int)$_GET["delete"]]);
+}
+
+// Өңдеу үшін бір жазбаны алу
+$editRow = null;
+if (isset($_GET["edit"])) {
+    $stmt = $pdo->prepare("SELECT * FROM bookings WHERE id = :id");
+    $stmt->execute([":id" => (int)$_GET["edit"]]);
+    $editRow = $stmt->fetch();
+}
+
+// READ (Барлық жазбаны оқу)
+$stmt = $pdo->prepare("SELECT * FROM bookings ORDER BY id DESC");
+$stmt->execute();
+$bookings = $stmt->fetchAll();
 ?>
 
-<section class="booking-section">
+<form method="POST">
+    <input type="hidden" name="action" value="<?= $editRow ? "update" : "create" ?>">
+    <?php if ($editRow): ?>
+        <input type="hidden" name="id" value="<?= (int)$editRow["id"] ?>">
+    <?php endif; ?>
 
-    <div class="booking-box">
+    <input type="text" name="patient_name" placeholder="Науқас аты-жөні" required
+           value="<?= htmlspecialchars($editRow["patient_name"] ?? "") ?>">
+    <input type="text" name="doctor_name" placeholder="Дәрігер" required
+           value="<?= htmlspecialchars($editRow["doctor_name"] ?? "") ?>">
+    <input type="date" name="appointment_date" required
+           value="<?= htmlspecialchars($editRow["appointment_date"] ?? "") ?>">
+    <button type="submit"><?= $editRow ? "Сақтау" : "Қосу" ?></button>
+</form>
 
-        <h1>Дәрігерге жазылу</h1>
-
-        <?php if($message): ?>
-            <p class="success"><?= htmlspecialchars($message) ?></p>
-        <?php endif; ?>
-
-        <form method="POST" action="booking.php?doctor=<?= urlencode($doctor) ?>">
-
-            <label>Дәрігер</label>
-            <input type="text" value="<?= htmlspecialchars($doctor) ?>"
-                   placeholder="Дәрігер аты" readonly>
-
-            <label>Аты-жөніңіз</label>
-            <input type="text" name="name" required>
-
-            <label>Телефон нөмірі</label>
-            <input type="tel" name="phone" required>
-
-            <label>Қабылдау күні</label>
-            <input type="date" name="date"
-                   min="<?= date('Y-m-d') ?>" required>
-
-            <button type="submit" class="main-btn full-btn">
-                Жазылуды растау →
-            </button>
-
-        </form>
-
-    </div>
-
-</section>
-
-<?php include 'footer.php'; ?>
+<table border="1" cellpadding="6">
+    <tr>
+        <th>ID</th>
+        <th>Науқас</th>
+        <th>Дәрігер</th>
+        <th>Күні</th>
+        <th>Әрекет</th>
+    </tr>
+    <?php foreach ($bookings as $row): ?>
+        <tr>
+            <td><?= (int)$row["id"] ?></td>
+            <td><?= htmlspecialchars($row["patient_name"]) ?></td>
+            <td><?= htmlspecialchars($row["doctor_name"]) ?></td>
+            <td><?= htmlspecialchars($row["appointment_date"]) ?></td>
+            <td>
+                <a href="?edit=<?= (int)$row["id"] ?>">Өңдеу</a> |
+                <a href="?delete=<?= (int)$row["id"] ?>" onclick="return confirm('Жойылсын ба?')">Жою</a>
+            </td>
+        </tr>
+    <?php endforeach; ?>
+</table>
